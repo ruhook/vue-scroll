@@ -2,8 +2,8 @@
   <vue-scroll
     ref="scroll"
     :data="list"
-    :pullDownRefresh="aa"
-    :pullUpLoad="true"
+    :pullDownRefresh="pullDownRefresh"
+    :pullUpLoad="pullUpLoad"
     @pullingDown="onPullingDown"
     @pullingUp="onPullingUp"
   >
@@ -19,12 +19,8 @@ export default {
   data () {
     return {
       list: Array(20),
-      isPullup: true,
-      pullup: true,
-      aa: {
-        threshold: 90,
-        stop: 40
-      }
+      pullUpLoad: true,    // 开启上拉加载的条件
+      pullDownRefresh: 40  // 开启下拉刷新&&触发刷新条件的高度
     }
   },
   methods: {

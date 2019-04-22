@@ -262,7 +262,7 @@ export default {
           this.bubbleY = 0
         }
         if (this.isRebounding)        {
-          this.pullDownStyle = `top:${10 - (this.pullDownRefresh.stop - pos.y)}px`
+          this.pullDownStyle = `top:${10 - (this.pullDownRefresh - pos.y)}px`
         }
       })
     },
@@ -273,7 +273,7 @@ export default {
       })
     },
     _reboundPullDown () {
-      const { stopTime = 600 } = this.pullDownRefresh
+      const stopTime = 600
       return new Promise((resolve) => {
         setTimeout(() => {
           this.isRebounding = true
