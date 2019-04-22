@@ -30,6 +30,10 @@ export default {
       }, 2000)
     },
     onPullingUp () {
+      if (this.list.length >= 21)      {
+        this.$refs.scroll.forceUpdate(false)
+        return
+      }
       setTimeout(() => {
         if (Math.random() > 0.5)        {
           console.log('push')
